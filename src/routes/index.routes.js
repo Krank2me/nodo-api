@@ -1,22 +1,16 @@
 const { Router } = require('express')
-const getUsers = require('../controllers/getUsers.controller')
-const getUserById = require('../controllers/getUserById.controller')
+const getPersonas = require('../controllers/getPersonas.controller')
+const getPersonaById = require('../controllers/getPersonaById.controller')
+const createPersona = require('../controllers/createPersona.controller')
+const updatePersona = require('../controllers/updatePersona.controller')
+const deletePersona = require('../controllers/deletePersona.controller')
 
 const router = Router()
 
-router.get('/users', getUsers )
-router.get('/users/:id', getUserById )
-
-/*
-  TODO: Tarea!
-*/
-
-// router.put('/editarUsuario', async (req, res) => {
-
-// })
-
-// router.delete('/eliminarUsuario', async (req, res) => {
-
-// })
+router.get('/personas', getPersonas)
+router.get('/personas/:id', getPersonaById)
+router.post('/personas', createPersona)
+router.put('/personas/:id', updatePersona)
+router.delete('/personas/:id', deletePersona)
 
 module.exports = router
